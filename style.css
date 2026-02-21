@@ -1,0 +1,479 @@
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #faf7f2;
+            background-image: radial-gradient(circle at 10% 30%, rgba(230, 215, 190, 0.2) 0%, transparent 25%);
+            color: #2c302e;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        /* ГАРМОНИЧНАЯ ПАЛИТРА */
+        :root {
+            --deep-rose: #b23e3e;      /* приглушенный красный, элегантный */
+            --sage: #6b8c6d;           /* спокойный зеленый, пыльный шалфей */
+            --wheat: #e7c791;          /* мягкий желто-бежевый, как степь */
+            --clay: #c17b4d;           /* терракотовый акцент */
+            --charcoal: #3a3f3d;       /* темно-серый для текста */
+            --cream: #fefaf0;          /* чистый кремовый фон */
+            --mist: #e3dfd3;           /* серо-бежевый для границ */
+            --gold-soft: #dba959;      /* приглушенное золото */
+        }
+
+        /* ШАПКА */
+        .header {
+            background: linear-gradient(112deg, #bc3908 0%, #f6aa1c 45%, #386641 100%);
+            color: white;
+            padding: 1.4rem 2.2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: none;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        .logo p {
+            margin: 0 0 12px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff8e0;
+            opacity: 0.95;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+        }
+
+        /* Навигация */
+        .nav-menu {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-menu a {
+            color: #2f2e2e;
+            text-decoration: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 600;
+            background: rgba(255, 255, 240, 0.9);
+            border: none;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            backdrop-filter: blur(4px);
+            font-size: 0.98rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            color: #1e2e2b;
+        }
+
+        .nav-menu a i {
+            color: #b23e3e;
+            font-size: 1rem;
+        }
+
+        .nav-menu a:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 16px -8px rgba(178, 62, 62, 0.15);
+            color: #b23e3e;
+        }
+
+        .nav-menu a.active {
+            background: #b23e3e;
+            color: white;
+            box-shadow: 0 6px 14px rgba(178, 62, 62, 0.25);
+        }
+
+        .nav-menu a.active i {
+            color: white;
+        }
+
+        /* ДИЗАЙН */
+        .page {
+            display: none;
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            animation: fadeUp 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .page.active-page {
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+        }
+
+        /* типографика */
+        h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #2c3e37;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.8rem;
+            border-bottom: 3px solid var(--wheat);
+            display: inline-block;
+            padding-bottom: 0.4rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h3 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #386641;
+            margin: 2rem 0 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2f5e4a;
+        }
+
+        /* карточки */
+        .info-card {
+            background: white;
+            padding: 2.2rem;
+            border-radius: 32px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+            border: 1px solid rgba(107, 140, 109, 0.15);
+            transition: all 0.3s;
+            backdrop-filter: blur(2px);
+        }
+
+        .info-card:hover {
+            box-shadow: 0 25px 40px -12px rgba(107, 140, 109, 0.18);
+            border-color: var(--sage);
+            transform: translateY(-4px);
+        }
+
+        /* бейдж */
+        .fact-badge {
+            background: var(--sage);
+            color: white;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            border: none;
+            box-shadow: none;
+            margin-bottom: 0.8rem;
+        }
+
+        /* сетки */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        /* ИЗОБРАЖЕНИЯ */
+        .hero-image {
+            width: 70%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 32px;
+            margin: 2rem 0 1.5rem;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.1);
+            border: 1px solid var(--wheat);
+        }
+
+        .history-image {
+            width: 70%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 32px;
+            margin: 1.5rem 0 2rem;
+            box-shadow: 0 25px 40px -12px rgba(107, 140, 109, 0.2);
+            border: 1px solid var(--sage);
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: #5e6e67;
+            margin-top: 0.3rem;
+            text-align: right;
+            font-style: italic;
+        }
+
+        /* КАРТА */
+        .map-container {
+            height: 700px;
+            width: 70%;
+            border-radius: 28px;
+            margin: 2.2rem 0 1.2rem;
+            border: 1px solid #e2ddd3;
+            box-shadow: 0 15px 30px -8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: 0.2s;
+        }
+
+        .map-container:hover {
+            border-color: var(--sage);
+            box-shadow: 0 28px 40px -12px rgba(107, 140, 109, 0.2);
+        }
+
+        .map {
+            width:100%;
+            height:100%;
+        }
+
+        /* ФОТОГАЛЕРЕЯ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #efebe4;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+            transition: 0.25s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 40px -12px rgba(107, 140, 109, 0.2);
+            border-color: var(--sage);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 1rem 1.2rem 1.2rem;
+            font-weight: 500;
+            color: #2f4f4a;
+            background: white;
+            font-size: 0.98rem;
+            border-top: 1px solid #f1ebe4;
+        }
+
+        /* АУДИОФАЙЛЫ */
+        .audio-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.6rem 2rem;
+            border: 1px solid #edeadf;
+            box-shadow: 0 8px 18px -6px rgba(0,0,0,0.02);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            transition: 0.2s;
+        }
+
+        .audio-card:hover {
+            border-color: var(--sage);
+            box-shadow: 0 22px 30px -14px rgba(107, 140, 109, 0.1);
+        }
+
+        .audio-icon {
+            background: #f5ede1;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--deep-rose);
+            font-size: 2rem;
+            border: none;
+        }
+
+        audio {
+            width: 280px;
+            height: 46px;
+            border-radius: 40px;
+        }
+
+        /* ПОДВАЛ */
+        .footer {
+            background: #2c3e37;
+            color: #e3dfcd;
+            text-align: center;
+            padding: 2.2rem;
+            border-top: 4px solid var(--wheat);
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ВИКТОРИНА */
+        .quiz-section {
+            background: white;
+            border-radius: 36px;
+            padding: 2.5rem;
+            margin: 3rem 0 1rem;
+            border: 1px solid var(--wheat);
+            box-shadow: 0 20px 40px -12px rgba(107, 140, 109, 0.12);
+        }
+
+        .quiz-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-title i {
+            font-size: 2.2rem;
+            color: var(--deep-rose);
+        }
+
+        .quiz-question {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e37;
+            margin-bottom: 1.8rem;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-option {
+            background: #f9f6f0;
+            border: 1.5px solid #e7ddd0;
+            border-radius: 60px;
+            padding: 1rem 1.8rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2f4f4a;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .quiz-option:hover {
+            background: var(--wheat);
+            border-color: var(--sage);
+            transform: translateY(-2px);
+        }
+
+        .quiz-option.selected {
+            background: var(--sage);
+            border-color: var(--deep-rose);
+            color: white;
+        }
+
+        .quiz-option.selected i {
+            color: white;
+        }
+
+        .quiz-feedback {
+            font-size: 1.2rem;
+            padding: 1rem 1.8rem;
+            border-radius: 60px;
+            background: #f1eee9;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+
+        .quiz-btn {
+            background: var(--deep-rose);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .quiz-btn:hover {
+            background: #9e3535;
+            transform: translateY(-3px);
+            box-shadow: 0 16px 20px -8px rgba(178, 62, 62, 0.3);
+        }
+
+        .quiz-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .quiz-result {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--deep-rose);
+            padding: 1rem 2rem;
+            background: #fff6e5;
+            border-radius: 60px;
+            display: inline-block;
+        }
+
+        .floating-tag {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: white;
+            border-radius: 100px;
+            padding: 0.8rem 1.6rem;
+            box-shadow: 0 10px 30px rgba(107, 140, 109, 0.1);
+            border: 1px solid var(--wheat);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            color: var(--deep-rose);
+            backdrop-filter: blur(8px);
+            z-index: 999;
+            font-size: 0.95rem;
+        }
+
+        /* Адаптивность */
+
+        @media (max-width: 800px) {
+            .header { flex-direction: column; }
+            h2 { font-size: 2rem; }
+            audio { width: 200px; }
+            .hero-image, .history-image { width: 100%;}
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));}
+            .history-image { height: 220px; }
+            .gallery-img {height: auto;}
+            .map-container { width: 100%; height: 300px;}
+        }
