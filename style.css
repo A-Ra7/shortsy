@@ -476,4 +476,5 @@
             .history-image { height: 220px; }
             .gallery-img {height: auto;}
             .map-container { width: 100%; height: 300px;}
+            .floating-tag { display: none; }
         }
